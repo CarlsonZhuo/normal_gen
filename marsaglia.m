@@ -1,0 +1,10 @@
+function y = marsaglia()
+    u = rand;
+    xn = 0;
+    xnp1 = 1;
+    while xnp1 - xn > 0.0000001
+        xn = xnp1;
+        xnp1 = xn - (cdf_marsaglia(xn) - u) / normpdf(xn, 0, 1);
+    end
+    y = xnp1;
+end
