@@ -40,7 +40,7 @@ for i = 1:iter_time
 end
 toc
 
-% Marsaglia
+% My Method
 tic
 my_result = zeros(1, iter_time);
 for i = 1:iter_time
@@ -72,3 +72,10 @@ m_skewness = skewness(m_result)
 my_skewness = skewness(my_result)
 benchmark_skewness = skewness(benchmark_result)
 
+[bm_h, bm_p, bm_KSSTAT, bm_cv] = kstest(bm_result)
+[mb_h, mb_p, mb_KSSTAT, mb_cv] = kstest(mb_result)
+[bsm_h, bsm_p, bsm_KSSTAT, bsm_cv] = kstest(bsm_result)
+[h_h, h_p, h_KSSTAT, h_cv] = kstest(h_result)
+[m_h, m_p, m_KSSTAT, m_cv] = kstest(m_result)
+[my_h, my_p, my_KSSTAT, my_cv] = kstest(my_result)
+[benchmark_h, benchmark_p, benchmark_KSSTAT, benchmark_cv] = kstest(benchmark_result)
